@@ -1,0 +1,16 @@
+DESCRIÇÃO
+O projeto consiste em um minegame desenvolvido em linguagem C, onde o computador gera aleatoriamente um número de 1 a 100.
+O objetivo do jogador é adivinhar esse número com base nas dicas oferecidas pelo programa.
+A cada tentativa, o sistema informa se o valor digitado é maior ou menor que o número correto, permitindo que o jogador tenha exatas 6 tentativas.
+
+FUNCIONALIDADES
+- Geração de número aleatório
+- Interação com o usuário via terminal
+- Estrutura de repetição
+
+EXECUÇÃO
+Pré-requisitos:
+- Copilador C
+
+CONTEXTO
+O projeto foi desenvolvido como parte de um processo seletivo para um projeto de extenção acadêmico, com o objetivo de demonstrar conhecimentos básicos em uma linguagem (no caso, linguagem C), trabalho em equipe e organização.
