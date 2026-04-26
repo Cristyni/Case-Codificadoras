@@ -1,0 +1,62 @@
+//bibliotecas utilizadas
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+ #include <time.h>
+
+ //função principal
+ int main(){
+
+    //criando a variáveis
+    int tentativas = 1;
+    int palpite;
+    int numero;
+    int acertos = 0;
+
+    /*função 'srand' onde faz com que o computador sorteie números diferentes (ja que ele tende a mostrar números aleatórios, porém com um certo padrão, teendendo a repetilos)*/
+    srand(time(NULL));
+    
+    /*usando a função 'rand' para pedir para o computador mostrar um número aleatório, porém delimitando os números a serem sorteados (nesse caso, delimitamos números de 1 a 100)*/
+    numero = rand() %100 + 1;
+
+    printf("\nEstou pensando em um número de 1 a 100..\n Tente adivinhar!\n");
+
+    /*enquanto o valor das tentativas forem menores do que 6 E o valor de acertos forem iguais a 0, será executado os códigos dentro das chaves do 'while', até que ambas as condições sejam diferentes do que foi pedido*/
+    while( tentativas <= 6 && acertos == 0){
+
+        /*Como inicialmente o número de tentativas é 1 (que é menor que 6) e o número de acertos é igual 0, assim que aparecer as apresentações do jogo, já aparecerá a mensagem mostrando o número de tentativas do momento e uma mensagem pedindo ao usuário para digitar seu palpite*/
+        printf("\nTentativa %i , digite seu palpite: ", tentativas);
+        scanf("%i", &palpite);
+
+        /*Se o valor do palpite for menor do que o número sorteado pelo computador, aparecerá o código dentro das chaves do 'if'*/
+        if(palpite < numero){
+            printf("\nMuito baixo!\n");
+
+        /*Caso contrário, se palpite for maior que o número sorteado pelo computador, aparecerá o código dentro das chaves do 'else if'*/
+        }else if (palpite > numero){
+            printf("\nMuito alto!\n");
+
+        /*Caso contrário, se palpite for igual ao número sorteado pelo computador, aparecerá o código dentro das chaves do 'else if'*/
+        }else if(palpite == numero){
+            printf("\nParabéns, você acertou o número!!\n");
+            /*Mudando o valor de acertos de 0 para 1, sendo assim, o laço de repetição se encerra aqui*/
+            acertos = 1;
+        }//else if
+        
+
+        /*Após ser verificado qual foi o palpite do usuário, será adicionado +1 no valor de 'tentativas' e o laço voltará a se repetir até que 'tentativas' seja igual a 6*/
+        tentativas++;
+    }//while
+
+
+    /*se no final das tentativas o valor de acertos permanecer igual a 0, será executado os códigos dentro das chaves de 'if'*/
+    if(acertos == 0){
+
+    /*avisando ao usuário que o número de tentativas acabou e mostrando qual era o número sorteado pelo computador*/
+    printf("Infelizmente vc esgotou o número de tentativas..\n");
+    printf("O número era: %i\n", numero);
+    }//if
+
+    return 0;
+    
+ }//main
